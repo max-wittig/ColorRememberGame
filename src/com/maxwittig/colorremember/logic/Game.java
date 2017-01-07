@@ -11,7 +11,7 @@ public class Game
     private ArrayList<Colors> computerColors;
     private ArrayList<Colors> playerColors;
     private MainController mainController;
-
+    private int currentRound = 1;
 
     public Game(MainController mainController)
     {
@@ -75,5 +75,15 @@ public class Game
     public Difficulty getDifficulty()
     {
         return difficulty;
+    }
+
+    public int getCurrentRound()
+    {
+        return currentRound;
+    }
+
+    public void setCurrentRound(int currentRound)
+    {
+        this.currentRound = currentRound;
     }
 }

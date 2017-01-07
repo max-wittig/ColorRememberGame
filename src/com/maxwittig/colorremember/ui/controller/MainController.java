@@ -26,12 +26,11 @@ public class MainController extends Controller
     @FXML private Label gameStatusLabel;
     private Game game;
     private ButtonHandler buttonHandler;
-    private int currentRound = 1;
 
     public void showColors(ArrayList<Colors> colors)
     {
-        gameStatusLabel.setText("Turns: "+ currentRound);
-        currentRound++;
+        gameStatusLabel.setText("Turns: "+ game.getCurrentRound());
+        game.setCurrentRound(game.getCurrentRound() +1);
         buttonHandler.clearColor();
         game.setComputerPhase(true);
 
@@ -75,6 +74,8 @@ public class MainController extends Controller
     public void showLostDialog()
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setTitle("Better luck next time!");
         alert.setContentText("Lost");
         alert.show();
     }
