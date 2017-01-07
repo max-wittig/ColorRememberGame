@@ -1,4 +1,4 @@
-package com.maxwittig.colorguess.ui.controller;
+package com.maxwittig.colorremember.ui.controller;
 
 
 import javafx.stage.Stage;

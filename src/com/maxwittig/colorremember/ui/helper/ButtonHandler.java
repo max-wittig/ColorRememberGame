@@ -1,8 +1,10 @@
-package com.maxwittig.colorguess.ui.helper;
+package com.maxwittig.colorremember.ui.helper;
 
 
-import com.maxwittig.colorguess.logic.Colors;
-import com.maxwittig.colorguess.ui.controller.MainController;
+import com.maxwittig.colorremember.ColorUtils;
+import com.maxwittig.colorremember.logic.Colors;
+import com.maxwittig.colorremember.ui.controller.MainController;
+import javafx.scene.paint.Color;
 
 public class ButtonHandler
 {
@@ -32,9 +34,9 @@ public class ButtonHandler
 
     public void clearColor()
     {
-        mainController.getBlueButton().setStyle("-fx-background-color: lightgray");
-        mainController.getGreenButton().setStyle("-fx-background-color: lightgray");
-        mainController.getYellowButton().setStyle("-fx-background-color: lightgray");
-        mainController.getRedButton().setStyle("-fx-background-color: lightgray");
+        mainController.getBlueButton().setStyle("-fx-background-color: lightgray;");
+        mainController.getGreenButton().setStyle("-fx-background-color: lightgray;");
+        mainController.getYellowButton().setStyle("-fx-background-color: lightgray;");
+        mainController.getRedButton().setStyle("-fx-background-color: lightgray;");
     }
 }

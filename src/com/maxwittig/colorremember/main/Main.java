@@ -1,6 +1,6 @@
-package com.maxwittig.colorguess.main;
+package com.maxwittig.colorremember.main;
 
-import com.maxwittig.colorguess.ui.controller.MainController;
+import com.maxwittig.colorremember.ui.controller.MainController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -22,18 +22,19 @@ public class Main extends Application
     {
         try
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("com/maxwittig/colorguess/ui/fxml/main_controller.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("com/maxwittig/colorremember/ui/fxml/main_controller.fxml"));
             Parent root = (Parent) loader.load();
 
             Scene scene = new Scene(root, 800, 600);
+            scene.getStylesheets().add(getClass().getResource("/com/maxwittig/colorremember/ui/css/style.css").toString());
 
             ((MainController) loader.getController()).init(primaryStage, null);
 
-            primaryStage.setTitle("ColorGuess");
+            primaryStage.setTitle("ColorRemember");
             primaryStage.setScene(scene);
             primaryStage.setResizable(true);
-            primaryStage.setMinWidth(600);
-            primaryStage.setMinHeight(400);
+            primaryStage.setMinWidth(800);
+            primaryStage.setMinHeight(600);
 
             primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()
             {

@@ -1,0 +1,30 @@
+.label
+{
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+}
+
+#redLabel
+{
+    -fx-background-color: red;
+}
+
+#blueLabel
+{
+    -fx-background-color: blue;
+}
+
+#greenLabel
+{
+    -fx-background-color: green;
+}
+
+#yellowLabel
+{
+    -fx-background-color: yellow;
+}
+
+.button
+{
+    -fx-background-color: lightgray;
+}

@@ -1,20 +1,18 @@
-package com.maxwittig.colorguess.ui.controller;
+package com.maxwittig.colorremember.ui.controller;
 
 
-import com.maxwittig.colorguess.logic.Colors;
-import com.maxwittig.colorguess.logic.Game;
-import com.maxwittig.colorguess.ui.helper.ButtonHandler;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import com.maxwittig.colorremember.logic.Colors;
+import com.maxwittig.colorremember.logic.Game;
+import com.maxwittig.colorremember.ui.helper.ButtonHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.util.Duration;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class MainController extends Controller
 {
@@ -28,6 +26,7 @@ public class MainController extends Controller
 
     public void showColors(ArrayList<Colors> colors)
     {
+        buttonHandler.clearColor();
         Thread thread = new Thread(new Runnable()
         {
             @Override
@@ -64,11 +63,16 @@ public class MainController extends Controller
 
     }
 
-    public void resetGame()
+    public void showLostDialog()
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Lost");
         alert.show();
+    }
+
+    public void resetGame()
+    {
+        game = new Game(this);
     }
 
     public Button getGreenButton()
@@ -109,12 +113,6 @@ public class MainController extends Controller
     }
 
     @FXML
-    private void onStartButtonClicked()
-    {
-        game = new Game(this);
-    }
-
-    @FXML
     private void blueButtonClicked()
     {
         game.addColor(Colors.BLUE);
@@ -139,4 +137,26 @@ public class MainController extends Controller
         game.addColor(Colors.YELLOW);
     }
 
+    @FXML
+    private void onNewGameMenuItemClicked()
+    {
+        try
+        {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("com/maxwittig/colorremember/ui/fxml/game_start_controller.fxml"));
+            Parent root = (Parent) loader.load();
+
+            Scene scene = new Scene(root);
+            Stage gameStartStage = new Stage();
+            gameStartStage.setScene(scene);
+            gameStartStage.show();
+            ((GameStartController) loader.getController()).init(gameStartStage, this);
+
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

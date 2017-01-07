@@ -1,7 +1,5 @@
-package com.maxwittig.colorguess.logic;
+package com.maxwittig.colorremember.logic;
 
-
-import javafx.scene.paint.Color;
 
 import java.util.Random;
 

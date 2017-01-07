@@ -1,6 +1,6 @@
-package com.maxwittig.colorguess.logic;
+package com.maxwittig.colorremember.logic;
 
-import com.maxwittig.colorguess.ui.controller.MainController;
+import com.maxwittig.colorremember.ui.controller.MainController;
 
 import java.util.ArrayList;
 
@@ -29,6 +29,7 @@ public class Game
         if(playerColors.get(playerColors.size()-1) != computerColors.get(playerColors.size()-1))
         {
             //game over
+            mainController.showLostDialog();
             mainController.resetGame();
         }
         System.out.println(playerColors);

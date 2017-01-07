@@ -1,11 +1,11 @@
-package com.maxwittig.colorguess.logic;
+package com.maxwittig.colorremember.logic;
 
 
 public enum Difficulty
 {
-    EASY(10, 2000),
-    NORMAL(20, 1500),
-    HARD(30, 1000);
+    EASY(10, 800),
+    NORMAL(20, 500),
+    HARD(30, 300);
 
     private int stackLength;
     private long sleepTime;
