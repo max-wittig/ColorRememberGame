@@ -3,13 +3,14 @@ package com.maxwittig.colorremember.ui.controller;
 
 import com.maxwittig.colorremember.logic.Colors;
 import com.maxwittig.colorremember.logic.Game;
-import com.maxwittig.colorremember.ui.helper.ButtonHandler;
+import com.maxwittig.colorremember.ui.handler.ButtonHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -21,12 +22,18 @@ public class MainController extends Controller
     @FXML private Button redButton;
     @FXML private Button blueButton;
     @FXML private Button yellowButton;
+    @FXML private Label gameStatusLabel;
     private Game game;
     private ButtonHandler buttonHandler;
+    private int currentRound = 1;
 
     public void showColors(ArrayList<Colors> colors)
     {
+        gameStatusLabel.setText("Turns: "+ currentRound);
+        currentRound++;
         buttonHandler.clearColor();
+        game.setComputerPhase(true);
+
         Thread thread = new Thread(new Runnable()
         {
             @Override
@@ -56,6 +63,7 @@ public class MainController extends Controller
                     buttonHandler.clearColor();
 
                 }
+                game.setComputerPhase(false);
             }
         });
 
@@ -158,5 +166,10 @@ public class MainController extends Controller
         {
             e.printStackTrace();
         }
+    }
+
+    public Game getGame()
+    {
+        return game;
     }
 }

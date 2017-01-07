@@ -1,10 +1,8 @@
-package com.maxwittig.colorremember.ui.helper;
+package com.maxwittig.colorremember.ui.handler;
 
 
-import com.maxwittig.colorremember.ColorUtils;
 import com.maxwittig.colorremember.logic.Colors;
 import com.maxwittig.colorremember.ui.controller.MainController;
-import javafx.scene.paint.Color;
 
 public class ButtonHandler
 {

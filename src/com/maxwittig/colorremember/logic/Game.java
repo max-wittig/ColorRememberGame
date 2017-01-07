@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Game
 {
     private Difficulty difficulty;
-    private boolean computerPhase = true;
+    private boolean computerPhase = false;
     private ArrayList<Colors> computerColors;
     private ArrayList<Colors> playerColors;
     private MainController mainController;
@@ -19,11 +19,15 @@ public class Game
         computerColors = new ArrayList<>();
         playerColors = new ArrayList<>();
         difficulty = Difficulty.EASY;
-        next();
+
     }
 
     public void addColor(Colors color)
     {
+        //ignore input, if computer is showing colors in stack
+        if(computerPhase)
+            return;
+
         playerColors.add(color);
         //check if color is wrong
         if(playerColors.get(playerColors.size()-1) != computerColors.get(playerColors.size()-1))
@@ -37,20 +41,29 @@ public class Game
         System.out.println(playerColors.equals(computerColors));
         if(playerColors.equals(computerColors))
         {
-            next();
+            nextTurn();
             playerColors.clear();
         }
 
     }
 
-    private void next()
+    public void setDifficulty(Difficulty difficulty)
+    {
+        this.difficulty = difficulty;
+    }
+
+    public void nextTurn()
     {
         //add one(x) to it
         computerColors.add(Colors.getRandom());
 
         //play existing
         mainController.showColors(computerColors);
+    }
 
+    public void setComputerPhase(boolean computerPhase)
+    {
+        this.computerPhase = computerPhase;
     }
 
     public ArrayList<Colors> getComputerColors()

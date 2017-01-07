@@ -74,6 +74,13 @@
                </children>
             </VBox>
          </bottom>
+         <center>
+            <Label fx:id="gameStatusLabel" text="Turns: 0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

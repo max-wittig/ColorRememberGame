@@ -19,7 +19,10 @@ public class GameStartController extends Controller
     @FXML
     private void onStartButtonClicked()
     {
-        ((MainController)parentController).resetGame();
+        MainController mainController = ((MainController)parentController);
+        mainController.resetGame();
+        mainController.getGame().setDifficulty(difficultyComboBox.getSelectionModel().getSelectedItem());
+        mainController.getGame().nextTurn();
         stage.close();
     }
 }
