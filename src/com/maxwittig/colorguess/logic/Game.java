@@ -1,7 +1,6 @@
 package com.maxwittig.colorguess.logic;
 
 import com.maxwittig.colorguess.ui.controller.MainController;
-import com.maxwittig.colorguess.ui.helper.ButtonHandler;
 
 import java.util.ArrayList;
 
@@ -26,6 +25,12 @@ public class Game
     public void addColor(Colors color)
     {
         playerColors.add(color);
+        //check if color is wrong
+        if(playerColors.get(playerColors.size()-1) != computerColors.get(playerColors.size()-1))
+        {
+            //game over
+            mainController.resetGame();
+        }
         System.out.println(playerColors);
         System.out.println(computerColors);
         System.out.println(playerColors.equals(computerColors));

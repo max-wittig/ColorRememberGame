@@ -9,6 +9,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
@@ -36,7 +37,8 @@ public class MainController extends Controller
                 {
                     try
                     {
-                        Thread.sleep(100);
+                        //otherwise same color wouldn't even appear
+                        Thread.sleep(500);
                     }
                     catch (Exception e)
                     {
@@ -60,6 +62,13 @@ public class MainController extends Controller
 
         thread.start();
 
+    }
+
+    public void resetGame()
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText("Lost");
+        alert.show();
     }
 
     public Button getGreenButton()
