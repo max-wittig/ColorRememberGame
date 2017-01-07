@@ -128,26 +128,30 @@ public class MainController extends Controller
     @FXML
     private void blueButtonClicked()
     {
-        game.addColor(Colors.BLUE);
+        if(game != null)
+            game.addColor(Colors.BLUE);
     }
 
     @FXML
     private void greenButtonClicked()
     {
-        game.addColor(Colors.GREEN);
+        if(game != null)
+            game.addColor(Colors.GREEN);
     }
 
 
     @FXML
     private void redButtonClicked()
     {
-        game.addColor(Colors.RED);
+        if(game != null)
+            game.addColor(Colors.RED);
     }
 
     @FXML
     private void yellowButtonClicked()
     {
-        game.addColor(Colors.YELLOW);
+        if(game != null)
+            game.addColor(Colors.YELLOW);
     }
 
     @FXML

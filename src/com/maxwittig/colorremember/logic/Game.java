@@ -19,9 +19,12 @@ public class Game
         computerColors = new ArrayList<>();
         playerColors = new ArrayList<>();
         difficulty = Difficulty.EASY;
-
     }
 
+    /**
+     * triggered by colored buttons from user
+     * @param color Colors Enum
+     */
     public void addColor(Colors color)
     {
         //ignore input, if computer is showing colors in stack
@@ -52,6 +55,9 @@ public class Game
         this.difficulty = difficulty;
     }
 
+    /**
+     * called when game starts
+     */
     public void nextTurn()
     {
         //add one(x) to it
@@ -64,11 +70,6 @@ public class Game
     public void setComputerPhase(boolean computerPhase)
     {
         this.computerPhase = computerPhase;
-    }
-
-    public ArrayList<Colors> getComputerColors()
-    {
-        return computerColors;
     }
 
     public Difficulty getDifficulty()
