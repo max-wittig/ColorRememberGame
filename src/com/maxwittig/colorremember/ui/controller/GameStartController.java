@@ -25,4 +25,10 @@ public class GameStartController extends Controller
         mainController.getGame().nextTurn();
         stage.close();
     }
+
+    @FXML
+    private void onCancelButtonClicked()
+    {
+        stage.close();
+    }
 }

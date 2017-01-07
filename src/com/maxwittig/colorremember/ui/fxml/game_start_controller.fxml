@@ -7,8 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="291.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maxwittig.colorremember.ui.controller.GameStartController">
    <children>
-      <Button layoutX="92.0" layoutY="140.0" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="26.0" prefWidth="108.0" text="Start" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="92.0" AnchorPane.rightAnchor="92.0" />
+      <Button layoutX="22.0" layoutY="87.0" mnemonicParsing="false" onAction="#onStartButtonClicked" prefHeight="26.0" prefWidth="100.0" text="Start" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="22.0" />
       <ComboBox fx:id="difficultyComboBox" layoutX="125.0" layoutY="25.0" prefWidth="150.0" />
       <Label layoutX="22.0" layoutY="30.0" text="Difficulty:" />
+      <Button layoutX="170.0" layoutY="87.0" mnemonicParsing="false" onAction="#onCancelButtonClicked" prefHeight="26.0" prefWidth="100.0" text="Cancel" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="22.0" />
    </children>
 </AnchorPane>

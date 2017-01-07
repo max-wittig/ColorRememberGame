@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -117,7 +118,11 @@ public class MainController extends Controller
     @FXML
     private void onAboutItemClicked()
     {
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText(null);
+        alert.setContentText("© Max Wittig 2017");
+        alert.setTitle("Credits");
+        alert.show();
     }
 
     @FXML
@@ -156,11 +161,12 @@ public class MainController extends Controller
 
             Scene scene = new Scene(root);
             Stage gameStartStage = new Stage();
+            gameStartStage.setTitle("New Game");
             gameStartStage.setScene(scene);
-            gameStartStage.show();
+            gameStartStage.initModality(Modality.APPLICATION_MODAL);
+            gameStartStage.initOwner(stage.getOwner());
             ((GameStartController) loader.getController()).init(gameStartStage, this);
-
-
+            gameStartStage.showAndWait();
         }
         catch (Exception e)
         {
